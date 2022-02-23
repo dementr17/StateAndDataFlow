@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct StarterVIew: View {
-//    @EnvironmentObject var user: UserManager
-    //передаем объект (наследуем)
     
     @AppStorage("register") var register = false
     @AppStorage("user") var userName = ""
@@ -21,7 +19,6 @@ struct StarterVIew: View {
             } else {
                 RegisterView()
             }
-            //альтернатива стеку, чтобы реализовать условие (если переменная объекта тру то отображаем на экране дну структуру ,если фолс то другой
         }
     }
 }
@@ -29,7 +26,5 @@ struct StarterVIew: View {
 struct StarterVIew_Previews: PreviewProvider {
     static var previews: some View {
         StarterVIew()
-//            .environmentObject(UserManager())
-        //необходимо определить область отображения
     }
 }

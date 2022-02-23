@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RegisterView: View {
-//    @EnvironmentObject var user: UserManager
     @State private var disabled = true
     @State private var name = ""
     @State private var count = 0
@@ -33,18 +32,15 @@ struct RegisterView: View {
                             color = .red
                         }
                    })
-                //текст по центру
                 Text("\(count)")
                     .padding(.horizontal)
                     .foregroundColor(color)
             }
                 
                 Button(action: registerUser) {
-                    //при нажатии отрабатывает action
                     HStack {
                         Image(systemName: "checkmark.circle")
                         Text("Ok")
-                        //наполняем кнопку, но при жедании это можно реализовать через лейбл
                     }
                 }
                 .disabled(disabled)
@@ -56,10 +52,6 @@ struct RegisterView: View {
 extension RegisterView {
     private func registerUser() {
         if !name.isEmpty {
-            //если имя не пустое, то передаем его в имя объекта и меняем переменную, чтобы отобразить другой экран
-//            user.name = name
-//            user.isRegister.toggle()
-            
             register = true
             userName = name
         }

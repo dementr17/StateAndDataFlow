@@ -8,20 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @EnvironmentObject var user: UserManager
-    //переменная принимающая объект @StateObject типа UserManager
     @StateObject private var timer = TimeCounter()
-    // создаем объект класса
     @AppStorage("user") var userName: String?
     @AppStorage("register") var register: Bool?
     
     var body: some View {
         VStack(spacing: 40) {
-//            Text("Hi, \(user.name)")
             Text("Hi, \(userName ?? "")")
                 .font(.largeTitle)
                 .offset(x: 0, y: 100)
-            //сдвигаем вниз на 100
             Text("\(timer.counter)")
                 .font(.largeTitle)
                 .offset(x: 0, y: 100)

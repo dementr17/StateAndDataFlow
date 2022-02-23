@@ -8,11 +8,9 @@ import SwiftUI
 
 struct ButtonView: View {
     @ObservedObject var timer: TimeCounter
-//    @Binding var timer: Any?
     
     var body: some View {
         Button(action: timer.startTimer) {
-            //при нажатии кнопки реализуется метод из класса
             Text("\(timer.buttonTitle)")
                 .font(.title)
                 .fontWeight(.bold)
